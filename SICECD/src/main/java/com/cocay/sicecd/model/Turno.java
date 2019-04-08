@@ -20,7 +20,7 @@ public class Turno {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "pk_id_turno")
-	int pk_id_turno;
+	Integer pk_id_turno;
 	@Column(name = "nombre")
 	String nombre;
 
@@ -28,11 +28,11 @@ public class Turno {
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Profesor> profesores = new ArrayList<>();
 
-	public int getPk_id_turno() {
+	public Integer getPk_id_turno() {
 		return pk_id_turno;
 	}
 
-	public void setPk_id_turno(int pk_id_turno) {
+	public void setPk_id_turno(Integer pk_id_turno) {
 		this.pk_id_turno = pk_id_turno;
 	}
 

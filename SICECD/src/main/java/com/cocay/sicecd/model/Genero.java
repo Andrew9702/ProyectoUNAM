@@ -12,14 +12,18 @@ import javax.persistence.Table;
 public class Genero {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	@Column(name = "pk_id_genero")
-	int pk_id_genero;
+	Integer pk_id_genero;
+	
 	@Column(name = "genero")
 	String genero;
-	public int getPk_id_genero() {
+	
+	//Getters y setters
+	public Integer getPk_id_genero() {
 		return pk_id_genero;
 	}
-	public void setPk_id_genero(int pk_id_genero) {
+	public void setPk_id_genero(Integer pk_id_genero) {
 		this.pk_id_genero = pk_id_genero;
 	}
 	public String getGenero() {

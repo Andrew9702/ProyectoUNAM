@@ -20,7 +20,7 @@ public class Estado {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "pk_id_estado")
-	int pk_id_estado;
+	Integer pk_id_estado;
 	@Column(name = "nombre")
 	String nombre;
 
@@ -28,11 +28,11 @@ public class Estado {
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Profesor> profesores = new ArrayList<>();
 
-	public int getPk_id_estado() {
+	public Integer getPk_id_estado() {
 		return pk_id_estado;
 	}
 
-	public void setPk_id_estado(int pk_id_estado) {
+	public void setPk_id_estado(Integer pk_id_estado) {
 		this.pk_id_estado = pk_id_estado;
 	}
 

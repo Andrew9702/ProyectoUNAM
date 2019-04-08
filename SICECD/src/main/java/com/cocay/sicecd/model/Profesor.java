@@ -23,48 +23,59 @@ public class Profesor {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "pk_id_profesor")
 	int pk_id_profesor;
+	
 	@Column(name = "nombre")
 	String nombre;
+	
 	@Column(name = "apellido_paterno")
 	String apellido_paterno;
+	
 	@Column(name = "apellido_materno")
 	String apellido_materno;
+	
 	@Column(name = "rfc")
 	String rfc;
+	
 	@Column(name = "curp")
 	String curp;
+	
 	@Column(name = "correo")
 	String correo;
+	
 	@Column(name = "telefono")
 	String telefono;
-	@ManyToOne(targetEntity=Estado.class)
-	@LazyCollection(LazyCollectionOption.FALSE)
-	@JoinColumn(name = "fk_id_estado")
-	int fk_id_estado;
+	
+
+	Integer fk_id_estado;
+	
 	String ciudad_localidad;
-	int id_genero;
+	
+	Integer id_genero;
+	
 	String plantel;
+	
 	String clave_plantel;
-	@ManyToOne(targetEntity=Turno.class)
-	@LazyCollection(LazyCollectionOption.FALSE)
-	@JoinColumn(name = "fk_id_turno")
-	int fk_id_turno;
-	@ManyToOne(targetEntity=Grado_profesor.class)
-	@LazyCollection(LazyCollectionOption.FALSE)
-	@JoinColumn(name = "fk_id_grado_profesor")
-	int fk_id_grado_profesor;
+	
+
+	Integer fk_id_turno;
+	
+
+	Integer fk_id_grado_profesor;
+	
 	String ocupacion;
+	
 	String curriculum;
 
 	@OneToMany(mappedBy = "fk_id_profesor", targetEntity=Inscripcion.class)
 	@LazyCollection(LazyCollectionOption.FALSE)
 	private List<Inscripcion> inscripciones = new ArrayList<>();
 
-	public int getPk_id_profesor() {
+	//Getters y setters
+	public Integer getPk_id_profesor() {
 		return pk_id_profesor;
 	}
 
-	public void setPk_id_profesor(int pk_id_profesor) {
+	public void setPk_id_profesor(Integer pk_id_profesor) {
 		this.pk_id_profesor = pk_id_profesor;
 	}
 
@@ -124,11 +135,11 @@ public class Profesor {
 		this.telefono = telefono;
 	}
 
-	public int getFk_id_estado() {
+	public Integer getFk_id_estado() {
 		return fk_id_estado;
 	}
 
-	public void setFk_id_estado(int fk_id_estado) {
+	public void setFk_id_estado(Integer fk_id_estado) {
 		this.fk_id_estado = fk_id_estado;
 	}
 
@@ -164,19 +175,19 @@ public class Profesor {
 		this.clave_plantel = clave_plantel;
 	}
 
-	public int getFk_id_turno() {
+	public Integer getFk_id_turno() {
 		return fk_id_turno;
 	}
 
-	public void setFk_id_turno(int fk_id_turno) {
+	public void setFk_id_turno(Integer fk_id_turno) {
 		this.fk_id_turno = fk_id_turno;
 	}
 
-	public int getFk_id_grado_profesor() {
+	public Integer getFk_id_grado_profesor() {
 		return fk_id_grado_profesor;
 	}
 
-	public void setFk_id_grado_profesor(int fk_id_grado_profesor) {
+	public void setFk_id_grado_profesor(Integer fk_id_grado_profesor) {
 		this.fk_id_grado_profesor = fk_id_grado_profesor;
 	}
 
